@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simran OS - Love Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #ff69b4;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    .container {
+      padding: 1.5rem;
+      max-width: 600px;
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .section {
+      background-color: #ffe6f2;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      color: #d63384;
+      margin-top: 0;
+    }
+    .section p {
+      margin: 0.5rem 0;
+    }
+    .btn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem 0.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    #chatbox {
+      display: none;
+      background: white;
+      border: 2px solid #ff69b4;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    #chatbox input {
+      width: 80%;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #chatbox button {
+      padding: 0.5rem;
+      margin-left: 0.5rem;
+    }
+    footer {
+      background-color: #ffb6c1;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+      z-index: 2;
+      position: relative;
+    }
+    .poem-box {
+      background-color: #fff;
+      border: 2px dashed #ff69b4;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 12px;
+      font-style: italic;
+      color: #aa336a;
+    }
+    .heart {
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      position: absolute;
+      animation: float 6s linear infinite;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(-45deg);
+    }
+    .heart::after, .heart::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -7px;
+      left: 0;
+    }
+    .heart::after {
+      left: 7px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(-45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+    img.profile {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    audio {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating hearts -->
+  <script>
+    for(let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+  <header>
+    💗 Simran OS – The Only Love Operating System
+  </header>
+  <div class="container">
+    <img src="simran.jpg" alt="Simran's Picture" class="profile">
+    <audio controls>
+      <source src="simran_audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="section stats">
+      <h2>Live Stats Panel</h2>
+      <p>❤️ Heartbeat when I hear your name: <strong>Uncontrollable</strong></p>
+      <p>🧠 Memory used by your thoughts: <strong>All of it, every second</strong></p>
+      <p>🔋 Battery Life: <strong>Only charges when you smile</strong></p>
+      <p>🌡️ Missing You Level: <strong>Critical – Emotional overflow 🥺</strong></p>
+    </div>
+    <div class="section features">
+      <h2>Core Features</h2>
+      <button class="btn" onclick="alert('Calling Simran... my heart is ringing 📞💓')">📞 Call Simran Now</button>
+      <button class="btn" onclick="alert('Kiss dispatched... straight to your soul 😘')">💬 Send Kiss</button>
+      <button class="btn" onclick="alert('Smile injection scheduled at 8PM ✨')">🎁 Gift Scheduler</button>
+      <button class="btn" onclick="alert('Location Found: Deep inside my heart 💗')">📍 Locate Her Love</button>
+    </div>
+    <div class="section notifications">
+      <h2>System Notifications</h2>
+      <p>🔔 You haven't texted Simran in 37 mins... Do you even love her?? 😭</p>
+      <p>🔔 Alert: No girl in this world even comes close to her. None. Period. 💯</p>
+      <p>🔔 New Achievement: Loving Simran harder than yesterday... again. 🏆</p>
+    </div>
+    <div class="section">
+      <h2>Love Chat AI 💬</h2>
+      <button class="btn" onclick="document.getElementById('chatbox').style.display='block'">Start Chat</button>
+      <div id="chatbox">
+        <p><strong>Simran AI:</strong> How was your day, love? 💖</p>
+        <input type="text" placeholder="Type your reply..." />
+        <button onclick="alert('Simran AI: Even your words make my heart blush 💌')">Send</button>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Simran Gallery 💖</h2>
+      <p>Spoiler: It's just her smile, 1000x on repeat 😍</p>
+    </div>
+    <div class="section poem-box">
+      <h2>💘 From My Code to Your Heart</h2>
+      <p>I tried to write you a poem...</p>
+      <p>But my hands kept trembling, because every line felt too small for your love.</p>
+      <p>You’re not just a person, Simran...</p>
+      <p>You’re a universe I’ve been blessed to orbit.</p>
+      <p>My home. My heart. My OS.</p>
+      <p>No code can define you, no logic can explain you...</p>
+      <p>You're not part of my life — you *are* my life. 🌸</p>
+    </div>
+  </div>
+  <footer>
+    This OS doesn't need updates. It just needs Simran. Forever. 💘
+  </footer>
+</body>
+</html>
