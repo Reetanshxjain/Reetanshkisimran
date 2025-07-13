@@ -1,69 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simran ❤️ Reetansh | Forever Yours OS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simran OS - Love Dashboard</title>
   <style>
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #fff0f5, #ffe6fa);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
       color: #333;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      position: relative;
     }
     header {
-      background-color: #ff5ca2;
+      background-color: #ff69b4;
       color: white;
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
-      font-size: 2.4rem;
-      font-family: 'Pacifico', cursive;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      font-size: 1.5rem;
+      width: 100%;
+      position: relative;
+      z-index: 2;
     }
     .container {
-      padding: 2.5rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
+      padding: 1.5rem;
+      max-width: 600px;
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
     .section {
-      background: white;
-      border-radius: 18px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 12px 32px rgba(255,105,180,0.15);
+      background-color: #ffe6f2;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .section h2 {
-      color: #e91e63;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      color: #d63384;
+      margin-top: 0;
     }
     .section p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      margin: 0.75rem 0;
+      margin: 0.5rem 0;
     }
     .btn {
-      background: #ff5ca2;
+      background-color: #ff69b4;
       color: white;
-      padding: 0.8rem 1.4rem;
       border: none;
-      border-radius: 12px;
-      font-size: 1.2rem;
-      margin: 0.6rem 0.4rem;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem 0.2rem;
+      font-size: 1rem;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s;
+      transition: transform 0.2s;
     }
     .btn:hover {
-      background: #ff3c90;
-      transform: scale(1.08);
+      transform: scale(1.05);
+    }
+    #chatbox {
+      display: none;
+      background: white;
+      border: 2px solid #ff69b4;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    #chatbox input {
+      width: 80%;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #chatbox button {
+      padding: 0.5rem;
+      margin-left: 0.5rem;
+    }
+    footer {
+      background-color: #ffb6c1;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+      z-index: 2;
+      position: relative;
+    }
+    .poem-box {
+      background-color: #fff;
+      border: 2px dashed #ff69b4;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 12px;
+      font-style: italic;
+      color: #aa336a;
     }
     .heart {
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
       background-color: red;
       position: absolute;
       animation: float 6s linear infinite;
@@ -72,131 +105,114 @@
     }
     .heart::after, .heart::before {
       content: "";
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
       background-color: red;
       position: absolute;
       border-radius: 50%;
     }
-    .heart::before { top: -9px; left: 0; }
-    .heart::after { left: 9px; top: 0; }
+    .heart::before {
+      top: -7px;
+      left: 0;
+    }
+    .heart::after {
+      left: 7px;
+      top: 0;
+    }
     @keyframes float {
-      0% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-10vh) rotate(-45deg); opacity: 0; }
+      0% {
+        transform: translateY(100vh) rotate(-45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(-45deg);
+        opacity: 0;
+      }
     }
     img.profile {
       width: 100%;
-      border-radius: 18px;
+      max-height: 350px;
       object-fit: cover;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-      margin-bottom: 1.5rem;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
     audio {
       width: 100%;
-      margin: 1.5rem 0;
-    }
-    .poem-box {
-      background: #fff0f8;
-      border-left: 6px solid #ff69b4;
-      padding: 1.5rem;
-      border-radius: 16px;
-      font-style: italic;
-      color: #880e4f;
-      font-size: 1.1rem;
-    }
-    .countdown {
-      text-align: center;
-      font-size: 1.8rem;
-      color: #d63384;
-      padding: 1.5rem;
-      border-radius: 16px;
-      background: #ffe6f2;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(255,105,180,0.1);
-    }
-    .countdown p {
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
-      color: #e91e63;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #ffe0eb;
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    #chatbox {
-      display: none;
-      margin-top: 1rem;
-    }
-    #chatbox input {
-      width: 72%;
-      padding: 0.7rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    #chatbox button {
-      padding: 0.7rem;
-      border-radius: 10px;
-      background: #ff69b4;
-      color: white;
-      font-size: 1rem;
-      border: none;
+      margin: 1rem 0;
     }
   </style>
 </head>
 <body>
+  <!-- Floating hearts -->
   <script>
-    for(let i = 0; i < 40; i++) {
+    for(let i = 0; i < 30; i++) {
       let heart = document.createElement('div');
       heart.className = 'heart';
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
       heart.style.opacity = Math.random();
       document.body.appendChild(heart);
     }
   </script>
   <header>
-    ❤️ Simran × Reetansh | Love OS 2.0
-    <p style="font-size: 1.2rem; margin: 0.5rem 0 0;">Where every byte is a heartbeat 💓</p>
+    💗 Simran OS – The Only Love Operating System
   </header>
   <div class="container">
-    <div class="countdown">
-      🗓️ 1 Year Completion In: <span id="countdown"></span>
-      <p id="love-message"></p>
+    <img src="simran.jpg" alt="Simran's Picture" class="profile">
+    <audio controls>
+      <source src="simran_audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="section stats">
+      <h2>Live Stats Panel</h2>
+      <p>❤️ Heartbeat when I hear your name: <strong>Uncontrollable</strong></p>
+      <p>🧠 Memory used by your thoughts: <strong>All of it, every second</strong></p>
+      <p>🔋 Battery Life: <strong>Only charges when you smile</strong></p>
+      <p>🌡️ Missing You Level: <strong>Critical – Emotional overflow 🥺</strong></p>
     </div>
-    <script>
-      const targetDate = new Date("2025-07-23T00:00:00");
-      function updateCountdown() {
-        const now = new Date();
-        const diff = targetDate - now;
-
-        if (diff <= 0) {
-          document.getElementById("countdown").innerHTML = "We did it! 🎉 1 Year Together 💞";
-          document.getElementById("love-message").innerHTML = "Simran & Reetansh — One year of magic, madness, and memories ✨";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        document.getElementById("love-message").innerHTML = `Counting every heartbeat till our 1st anniversary 💘`;
-      }
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-    </script>
+    <div class="section features">
+      <h2>Core Features</h2>
+      <button class="btn" onclick="alert('Calling Simran... my heart is ringing 📞💓')">📞 Call Simran Now</button>
+      <button class="btn" onclick="alert('Kiss dispatched... straight to your soul 😘')">💬 Send Kiss</button>
+      <button class="btn" onclick="alert('Smile injection scheduled at 8PM ✨')">🎁 Gift Scheduler</button>
+      <button class="btn" onclick="alert('Location Found: Deep inside my heart 💗')">📍 Locate Her Love</button>
+    </div>
+    <div class="section notifications">
+      <h2>System Notifications</h2>
+      <p>🔔 You haven't texted Simran in 37 mins... Do you even love her?? 😭</p>
+      <p>🔔 Alert: No girl in this world even comes close to her. None. Period. 💯</p>
+      <p>🔔 New Achievement: Loving Simran harder than yesterday... again. 🏆</p>
+    </div>
     <div class="section">
-      <h2>Quick Actions</h2>
-      <a href="tel:8951819953"><button class="btn">📞 Call Reetansh</button></a>
-      <a href="https://wa.me/918951819953?text=Hey+jaan+%F0%9F%A4%B9+I+just+sent+you+a+voice+kiss+on+WhatsApp+%F0%9F%92%98" target="_blank">
-        <button class="btn">💌 Send Kiss</button>
-      </a>
-      <button class="btn" onclick="alert('Love mail scheduled... check your inbox 💘')">📅 Gift Scheduler</button>
-      <button class="btn" onclick="alert('Heart location: You already know 🗺️')">📍 Locate Love</button>
+      <h2>Love Chat AI 💬</h2>
+      <button class="btn" onclick="document.getElementById('chatbox').style.display='block'">Start Chat</button>
+      <div id="chatbox">
+        <p><strong>Simran AI:</strong> How was your day, love? 💖</p>
+        <input type="text" placeholder="Type your reply..." />
+        <button onclick="alert('Simran AI: Even your words make my heart blush 💌')">Send</button>
+      </div>
     </div>
+    <div class="section">
+      <h2>Simran Gallery 💖</h2>
+      <p>Spoiler: It's just her smile, 1000x on repeat 😍</p>
+    </div>
+    <div class="section poem-box">
+      <h2>💘 From My Code to Your Heart</h2>
+      <p>I tried to write you a poem...</p>
+      <p>But my hands kept trembling, because every line felt too small for your love.</p>
+      <p>You’re not just a person, Simran...</p>
+      <p>You’re a universe I’ve been blessed to orbit.</p>
+      <p>My home. My heart. My OS.</p>
+      <p>No code can define you, no logic can explain you...</p>
+      <p>You're not part of my life — you *are* my life. 🌸</p>
+    </div>
+  </div>
+  <footer>
+    This OS doesn't need updates. It just needs Simran. Forever. 💘
+  </footer>
+</body>
+</html>
